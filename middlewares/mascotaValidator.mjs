@@ -1,4 +1,4 @@
-import { body,param, validationResult} from 'express-validator';
+import { body, param, validationResult} from 'express-validator';
 
 // Validar datos al crear o actualizar una mascota
 
@@ -18,11 +18,11 @@ export const validarMascota = [
 
 // Validar el ID en rutas que lo necesiten
 export const validarId = [
-    param('is').isNumeric().withMessage('El ID debe ser un número válido'),
-    (req, res, netx) => {
+    param('id').isNumeric().withMessage('El ID debe ser un número válido'),
+    (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array( )});
+            return res.status(400).json({ errors: errors.array() });
         }
         next();
     }

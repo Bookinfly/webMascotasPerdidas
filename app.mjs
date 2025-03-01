@@ -1,18 +1,23 @@
 import dotenv from 'dotenv';
-dotenv.config(); 
 import express from 'express';
 import cors from 'cors';
-import { dirname } from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
 import mascotaRoutes from './routes/mascotas.mjs';
 
+dotenv.config(); 
+
+
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 app.use(cors());
 
 app.use(express.json());
+
+app.use('/api', mascotaRoutes);
 
 
 app.get('/', (req, res) => {
@@ -20,10 +25,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    res.sendFile(__dirname + 'routes/index.html');
+    res.sendFile(path.join(__dirname,'routes', 'index.html'));
 });
 
-app.use('/api', mascotaRoutes);
 
 
 const PORT = process.env.PORT || 3000;

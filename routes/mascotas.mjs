@@ -6,6 +6,7 @@ import { validarMascota, validarId } from '../middlewares/mascotaValidator.mjs';
 const router = express.Router();
 
 router.get('/mascotas', Mascota.getAll);
+router.get('/mascotas/:id', Mascota.getById);
 router.post('/mascotas', validarMascota ,Mascota.create);
 router.put('/mascotas/:id', validarId, Mascota.update);
 router.delete('/mascotas/:id', validarId , Mascota.delete);
