@@ -6,24 +6,33 @@ export default class Mascota {
 
     static async create(req, res) {
         try {
-            // Extraemos los datos del cuerpo de la solicitud
+            console.log("intentando post")
+
             const { nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotos } = req.body;
 
-            // Construimos la consulta SQL usando un template string
+            let fotosToString = JSON.stringify(fotos);
+
+            // console.log([nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString])
+
+
             const query = `
                 INSERT INTO animales (${Mascota.COLUMNAS})
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             `;
 
-            // Ejecutamos la consulta
+            
+            console.log(pool.format(query, [
+                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString
+            ]));
+            
+
             const [result] = await pool.query(query, [
-                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotos
+                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString
             ]);
 
-            // Enviamos la respuesta
             res.status(201).json({
                 id_animal: result.insertId,
-                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotos
+                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString
             });
         } catch (error) {
             console.error('🚨 Error en create:', error);
