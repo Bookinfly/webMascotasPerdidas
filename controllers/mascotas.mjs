@@ -21,9 +21,9 @@ export default class Mascota {
             `;
 
             
-            console.log(pool.format(query, [
-                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString
-            ]));
+            // console.log(pool.format(query, [
+            //     nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString
+            // ]));
             
 
             const [result] = await pool.query(query, [
@@ -72,6 +72,8 @@ export default class Mascota {
             const { id } = req.params;
             const { nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotos } = req.body;
 
+            let fotosToString = JSON.stringify(fotos);
+
             // Construimos la consulta SQL usando un template string
             const query = `
                 UPDATE animales
@@ -81,7 +83,7 @@ export default class Mascota {
 
             // Ejecutamos la consulta
             const [result] = await pool.query(query, [
-                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotos, id
+                nombre, tipo, tamaño, edad, raza, color, pelo, amistoso, estado, chip, collar, chapita, castrado, vacunado, fotosToString, id
             ]);
 
             // Verificamos si se actualizó algún registro
