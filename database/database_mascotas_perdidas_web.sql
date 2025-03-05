@@ -17,7 +17,7 @@ CREATE TABLE animales (
     tamaño ENUM('Pequeño', 'Mediano', 'Grande') NOT NULL ,
     edad VARCHAR(50) NULL,
 	raza ENUM('Sin raza', 'Gato Común Europeo', 'Gato Americano de Pelo Corto','Labrador Retriever', 'Pastor Alemán', 'Bulldog Francés', 'Caniche', 'Golden Retriever', 'Beagle', 'Boxer', 'Yorkshire Terrier', 'Dachshund', 'Siamés', 'Persa', 'Bengala', 'Maine Coon', 'Sphynx', 'Ragdoll', 'Rottweiler', 'Chihuahua', 'Pug', 'Border Collie', 'Husky Siberiano', 'Shih Tzu', 'Boston Terrier', 'Devon Rex', 'Savannah', 'Angora', 'Abisinio', 'Otro') NULL,
-    color ENUM('Negro', 'Blanco', 'Marrón Claro', 'Marrón Oscuro', 'Gris', 'Atigrado', 'Bicolor', 'Tricolor', 'Blanco y Negro', 'Blanco y Marrón', 'Blanco y Gris', 'Negro y Marrón', 'Gris y Blanco', 'Gris y Negro', 'Naranja', 'Naranja y Blanco', 'Naranja y Negro', 'Naranja Atigrado') NOT NULL,
+    color ENUM('Negro', 'Blanco', 'Marrón Claro', 'Marrón Oscuro', 'Gris', 'Atigrado', 'Bicolor', 'Tricolor', 'Blanco y Negro', 'Blanco y Marrón', 'Blanco y Gris', 'Negro y Marrón', 'Gris y Blanco', 'Gris y Negro', 'Naranja', 'Naranja y Blanco', 'Naranja y Negro', 'Naranja Atigrado', 'amarillo') NOT NULL,
     pelo ENUM('Corto', 'Medio', 'Largo') NULL,
     amistoso ENUM('Sí', 'No', 'Sí, pero tener cuidado', 'No, pero es manso', 'Desconocido') DEFAULT 'Desconocido',
     estado ENUM('En casa', 'Perdido', 'Alojado mientras buscamos a su familia', 'En tránsito') DEFAULT 'En casa',

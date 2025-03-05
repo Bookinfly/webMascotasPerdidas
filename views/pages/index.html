@@ -1,12 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Es un sitio web para búsqueda de mascotas perdidas..">
+    <meta name="keywords" content="mascotas perdidas, buscar mascotas, encontrar mascotas, animales desaparecidos, perros perdidos, gatos perdidos, buscar animales, encontrar animales, mascotas extraviadas, animales extraviados, recuperar mascotas, localizar mascotas, ayudar a encontrar mascotas, mascotas desaparecidas, búsqueda de mascotas">
+    <meta name="robots" content="index, nofollow"><!--🔴⛔ esta para no encontrarse en buscadores-->
+    <meta name="author" content="Nahuel Amado estudiante de la UNL y del programa Talento Tech ex codo a codo 4.0">
+
+    <title>Buscador de Mascotas</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-    <h1>Hello World 😄!!!</h1>
-    <h2>Atrapalos a todos🐈🐈🐈🐈🐈🐈</h2>
+    <!--INICIO HEADER-->
+    <header>
+        <a href="http://localhost:3000/">
+            <img src="" alt="Logo mascotas web con link a home">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Mapa de Anuncios</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Colabora con el Proyecto</a></li>
+            </ul>
+        </nav>
+        <a href="http://localhost:3000/loguin">Login</a>
+    </header>
+    <!--INICIO MAIN-->
+
+    <main>
+        <section class="banner">
+            <h1>Buscador de Mascotas</h1>
+            <h2>Anuncios de animales perdidos, encontrados y avistados</h2>
+        </section>
+        <section class="barra_busqueda">
+
+            <form action="./submit_page" method="get">
+                <label for="buscador">Gato naranja...</label>
+                <input type="text" name="buscador" id="buscador">
+                <button class="filter_button">Filtros</button>
+                <div class="filtros_avanzados">
+                        <!-- Nombre -->
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="100"><br>
+
+                    <!-- Tipo -->
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Huron">Hurón</option>
+                        <option value="Erizo">Erizo</option>
+                        <option value="Tortuga">Tortuga</option>
+                        <option value="Otro">Otro</option>
+                    </select><br>
+
+                    <!-- Tamaño -->
+                    <label for="tamano">Tamaño:</label>
+                    <select id="tamano" name="tamaño">
+                        <option value="Pequeño">Pequeño</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Grande">Grande</option>
+                    </select><br>
+
+                    <!-- Edad -->
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" maxlength="50"><br>
+
+                    <!-- Raza -->
+                    <label for="raza">Raza:</label>
+                    <select id="raza" name="raza">
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Gato Común Europeo">Gato Común Europeo</option>
+                        <option value="Gato Americano de Pelo Corto">Gato Americano de Pelo Corto</option>
+                        <option value="Labrador Retriever">Labrador Retriever</option>
+                        <option value="Pastor Alemán">Pastor Alemán</option>
+                        <option value="Bulldog Francés">Bulldog Francés</option>
+                        <option value="Caniche">Caniche</option>
+                        <option value="Golden Retriever">Golden Retriever</option>
+                        <option value="Beagle">Beagle</option>
+                        <option value="Boxer">Boxer</option>
+                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                        <option value="Dachshund">Dachshund</option>
+                        <option value="Siamés">Siamés</option>
+                        <option value="Persa">Persa</option>
+                        <option value="Bengala">Bengala</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="Sphynx">Sphynx</option>
+                        <option value="Ragdoll">Ragdoll</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Pug">Pug</option>
+                        <option value="Border Collie">Border Collie</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Shih Tzu">Shih Tzu</option>
+                        <option value="Boston Terrier">Boston Terrier</option>
+                        <option value="Devon Rex">Devon Rex</option>
+                        <option value="Savannah">Savannah</option>
+                        <option value="Angora">Angora</option>
+                        <option value="Abisinio">Abisinio</option>
+                        <option value="Otro">Otro</option>
+                    </select><br>
+
+                    <!-- Color -->
+                    <label for="color">Color:</label>
+                    <select id="color" name="color" >
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Marrón Claro">Marrón Claro</option>
+                        <option value="Marrón Oscuro">Marrón Oscuro</option>
+                        <option value="Gris">Gris</option>
+                        <option value="Atigrado">Atigrado</option>
+                        <option value="Bicolor">Bicolor</option>
+                        <option value="Tricolor">Tricolor</option>
+                        <option value="Blanco y Negro">Blanco y Negro</option>
+                        <option value="Blanco y Marrón">Blanco y Marrón</option>
+                        <option value="Blanco y Gris">Blanco y Gris</option>
+                        <option value="Negro y Marrón">Negro y Marrón</option>
+                        <option value="Gris y Blanco">Gris y Blanco</option>
+                        <option value="Gris y Negro">Gris y Negro</option>
+                        <option value="Naranja">Naranja</option>
+                        <option value="Naranja y Blanco">Naranja y Blanco</option>
+                        <option value="Naranja y Negro">Naranja y Negro</option>
+                        <option value="Naranja Atigrado">Naranja Atigrado</option>
+                        <option value="Amarillo">Amarillo</option>
+                    </select><br>
+
+                    <!-- Pelo -->
+                    <label for="pelo">Pelo:</label>
+                    <select id="pelo" name="pelo">
+                        <option value="Corto">Corto</option>
+                        <option value="Medio">Medio</option>
+                        <option value="Largo">Largo</option>
+                    </select><br>
+
+                    <!-- Amistoso -->
+                    <label for="amistoso">Amistoso:</label>
+                    <select id="amistoso" name="amistoso">
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                        <option value="Sí, pero tener cuidado">Sí, pero tener cuidado</option>
+                        <option value="No, pero es manso">No, pero es manso</option>
+                        <option value="Desconocido">Desconocido</option>
+                    </select><br>
+
+                    <!-- Estado -->
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado">
+                        <option value="En casa">En casa</option>
+                        <option value="Perdido">Perdido</option>
+                        <option value="Alojado mientras buscamos a su familia">Alojado mientras buscamos a su familia</option>
+                        <option value="En tránsito">En tránsito</option>
+                    </select><br>
+
+                    <!-- Chip -->
+                    <label for="chip">Chip:</label>
+                    <input type="checkbox" id="chip" name="chip"><br>
+
+                    <!-- Collar -->
+                    <label for="collar">Collar:</label>
+                    <input type="checkbox" id="collar" name="collar"><br>
+
+                    <!-- Chapita -->
+                    <label for="chapita">Chapita:</label>
+                    <input type="checkbox" id="chapita" name="chapita"><br>
+
+                    <!-- Castrado -->
+                    <label for="castrado">Castrado:</label>
+                    <input type="checkbox" id="castrado" name="castrado"><br>
+
+                    <!-- Vacunado -->
+                    <label for="vacunado">Vacunado:</label>
+                    <input type="checkbox" id="vacunado" name="vacunado"><br>
+
+                    <input type="submit" value="Enviar">
+                </div>
+                <button><img src="" alt="lupa"></button>
+                <button>Nuevo Anuncio</button>
+                <!-- Opción Más Nuevo -->
+                <input type="radio" id="mas-nuevo" name="orden" value="mas-nuevo" checked>
+                <label for="mas-nuevo">Más Nuevo</label><br>
+        
+                <!-- Opción Más Relevante -->
+                <input type="radio" id="mas-relevante" name="orden" value="mas-relevante">
+                <label for="mas-relevante">Más Relevante</label><br>
+            </form>
+            
+        </section>
+        <section class="anuncios">
+            <div class="contenedor_de_anuncios">
+
+            </div>
+        </section>
+    </main>
+
+    <!--INICIO FOOTER-->
+    <footer>
+        <section>
+            <h2>El proyecto</h2>
+            <p><small>Buscador de Mascotas Perdidas es un proyecto de código abierto para organizaciones y amantes de los animales. Permite copiar y personalizar la plataforma para tu comunidad, facilitando la búsqueda y recuperación de mascotas perdidas. Úsalo para ayudar a encontrar y reunir mascotas con sus dueños en tu localidad.</small></p>
+        </section>
+        <section>
+            <section>
+                <h3>Contacto</h3>
+                <p><small>Ciudad Autónoma de Buenos Aires</small></p>
+                <p><small>Teléfono: <span id="telefono"></span></small></p>
+                <p><small>Email: <span id="email"></span>
+        </section>
+        <section>
+            <a href=""><img src="" alt="Logo Instagram"></a>
+            <a href=""><img src="" alt="Logo Github"></a>
+        </section>
+        <section>
+            <h3>Legal</h3>
+            <p><small>Proyecto de código abierto iniciado por Nahuel Matias Amado bajo licencia GNL.</small></p>
+            <p><small>Es un proyecto portfolio que realice como estudiante.</small></p>
+            <p><small>El código está disponible para ser reutilizado. Se recomienda alterar al menos en parte el logo, nombre y colores para su uso, y proteger adecuadamente la base de datos.</small></p>
+            <p><small><a href="política_de_cookies.html">Política de cookies</a></small></p>
+            <p><small><a href="política_de_privacidad.html">Política de Privacidad y Términos de Uso</a></small></p>
+            <p><small><a href="Exenciones de Responsabilidad.html">Exenciones de Responsabilidad</a></small></p>
+        </section>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="#">Buscador</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Mapa de Anuncios</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Colabora con el Proyecto</a></li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+    <script>
+        // Protección del email
+        document.getElementById("email").innerHTML = "<a href=''>bookinfly&#64;gmail&#46;com</a>";
+    
+        // Protección del teléfono
+        var telArray = ['+54', '11', '2394', '4463'];
+        document.getElementById("telefono").innerHTML = telArray.join("-");
+    </script>
 </body>
 </html>
