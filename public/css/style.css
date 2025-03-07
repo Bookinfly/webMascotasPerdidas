@@ -1,5 +1,5 @@
 .logo{
-  width: 60px;
+  width: 70px;
 }
 
 .nav{
@@ -8,4 +8,16 @@
 
 .main{
   margin-top: 4rem;
+}
+
+.filtros_avanzados{
+  display: none;
+}
+
+.svg{
+  width: 20px;
+}
+
+.svg-login{
+  width: 60px;
 }
