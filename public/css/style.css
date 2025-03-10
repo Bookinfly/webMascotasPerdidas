@@ -15,9 +15,51 @@
 }
 
 .svg{
-  width: 20px;
+  width: 30px;
 }
 
 .svg-login{
-  width: 60px;
+  width: 40px;
+}
+
+.vertical-line{
+  width: 5px;
+  height: 150px;
+  display: inline-block;
+  margin: auto 0px;
+  background-color: aliceblue;
+  border-radius: 40%;
+  -webkit-border-radius: 40%;
+  -moz-border-radius: 40%;
+  -ms-border-radius: 40%;
+  -o-border-radius: 40%;
+}
+
+.footer-nav li{
+  list-style-type: square;
+}
+
+.footer-nav a{
+  text-decoration: none;
+}
+
+.footer-nav a:link {
+  color: #ffc107;
+}
+
+.footer-nav a:visited{
+  color: #0d6efd;
+}
+
+.card {
+  position: static !important; /* O usa "initial" o "unset" según lo que necesites */
+}
+
+hr{
+  position: static!important;
+  z-index: 0!important;
+}
+
+header{
+  z-index: 1000;
 }

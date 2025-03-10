@@ -13,9 +13,9 @@
 
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="position-absolute">
+<body class="">
     <!--INICIO HEADER-->
-    <header class="container-fluid bg-dark position-fixed top-0 p-1 pt-3">
+    <header class="container-fluid bg-dark position-fixed top-0 p-1 pt-3 z-5">
         <a href="http://localhost:3000/">
             <img src="./img/Diseño sin título.png" alt="Logo mascotas web con link a home" class="logo px-2 col-3">
         </a>
@@ -27,14 +27,14 @@
                 <li><a href="">Colabora con el Proyecto</a></li>
             </ul>
         </nav>
-        <a href="http://localhost:3000/loguin" class="p-1 col 3">
+        <a href="http://localhost:3000/loguin" class="p-1 col-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-login"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0d6efd" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
         </a>
     </header>
     <!--INICIO MAIN-->
 
-    <main class="container main bg-light mt-5 pt-5">
-        <section class="banner">
+    <main class="container-fluid px-0 main bg-light mt-5 pt-5">
+        <section class="banner m-3">
             <h1 class="col-12 h1 text-center bg-primary text-light rounded p-2 fw-bold">Buscador de Mascotas</h1>
             <h2 class="h6 text-center fw-bold m-4 text-primary">Anuncios de animales perdidos, encontrados y avistados</h2>
         </section>
@@ -57,8 +57,8 @@
                     <label for="mas-relevante" class="col-10 m-auto">Más Relevante</label>
                 </div>
                 <div class="row p-3">
-                    <button class="btn btn-warning col-8 m-auto">➕ Nuevo Anuncio</button>
-                    <button class="filter_button btn btn-light col-2 m-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg"><path fill="#0d6efd" d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></button>
+                    <button class="btn btn-warning col-8 m-auto p-2">➕ Nuevo Anuncio</button>
+                    <button class="filter_button btn btn-light col-2 m-auto d-flex align-items-center justify-content-center" aria-label="filtros"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg"><path fill="#0d6efd" d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></button>
                 </div>
 
 
@@ -205,26 +205,46 @@
             </form>
             
         </section>
-        <section class="anuncios">
+        <section class="anuncios container-fluid mt-5 p-2 bg-dark bg-opacity-10">
             <div class="contenedor_de_anuncios">
+                <div class="card row mx-auto my-3 bg-primary bg-opacity-10" style="width: 18rem;">
+                    <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Gato encontrado en Paternal</h5>
+                    <p class="card-text">Gato persa atigrado encontrado en Paternal, macho, castrado y amigable. Sín collar ni chip, lo tengo en tránsito mientras busco a su familia.</p>
+                    <a href="#" class="btn btn-light text-dark">Contactar</a>
+                    </div>
+                </div>
+                <div class="card row mx-auto bg-primary bg-opacity-10" style="width: 18rem;">
+                    <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Perro perdido</h5>
+                    <p class="card-text">Jorgito se perdio cerca de la plaza Aristobulo del Valle en Villa del Parque, es muy manzo y su familia lo extraña..</p>
+                    <a href="#" class="btn btn-light text-dark ">Contactar</a>
+                    </div>
+                </div>
 
             </div>
         </section>
     </main>
 
-   <!--INICIO FOOTER-->
+<!--INICIO FOOTER-->
 <footer class="container-fluid text-light bg-dark mt-4 p-auto pt-4">
     <div class="row">
         <!-- Sección de Contacto -->
-        <section class="col-8">
-            <h3>Contacto</h3>
-            <p><small>Ciudad Autónoma de Buenos Aires</small></p>
-            <p><small>Teléfono: <span id="telefono"></span></small></p>
-            <p><small>Email: <span id="email"></span></small></p>
+        <section class="col-7">
+            <div><h3>Contacto</h3>
+                <p><small>Ciudad Autónoma de Buenos Aires</small></p>
+                <p><small>Teléfono: <span id="telefono"></span></small></p>
+                <p><small>Email: <span id="email"></span></small></p></div>
         </section>
+        <div class="col-1">
+            <div class="vertical-line bg-light"></div>
+        </div>
+
 
         <!-- Sección de Redes Sociales -->
-        <section class="col-4">
+        <section class="col-3">
             <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg m-2">
                     <path fill="#ffffff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
@@ -241,41 +261,46 @@
                 </svg>
             </a>
         </section>
+    </div>        
+
+    <hr class="bg-light">
+
+    <div class="row">
+        <section class="col-12">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#" class="fw-bold">Buscador</a></li>
+                    <li><a href="#" class="fw-bold">Nosotros</a></li>
+                    <li><a href="#" class="fw-bold">Mapa de Anuncios</a></li>
+                    <li><a href="#" class="fw-bold">Blog</a></li>
+                    <li><a href="#" class="fw-bold">Colabora con el Proyecto</a></li>
+                </ul>
+            </nav>
+        </section>
     </div>
-</footer>
-        
 
-        <div class="row">
-            <section class="col-12">
-                <nav>
-                    <ul>
-                        <li><a href="#">Buscador</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Mapa de Anuncios</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Colabora con el Proyecto</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
+    <hr class="bg-light">
     
-        <div class="row">
-            <section class="col-12">
-                <h2 class="h6">El proyecto</h2>
-                <p><small class="text-center p-2">Buscador de Mascotas Perdidas es un proyecto de código abierto para organizaciones y amantes de los animales. Permite copiar y personalizar la plataforma para tu comunidad, facilitando la búsqueda y recuperación de mascotas perdidas. Úsalo para ayudar a encontrar y reunir mascotas con sus dueños en tu localidad.</small></p>
-            </section>
+    <div class="row">
+        <section class="col-12">
+            <h2 class="h6">El proyecto</h2>
+            <p class="px-4 "><small >Buscador de Mascotas Perdidas es un proyecto de código abierto para organizaciones y amantes de los animales. Permite copiar y personalizar la plataforma para tu comunidad, facilitando la búsqueda y recuperación de mascotas perdidas. Úsalo para ayudar a encontrar y reunir mascotas con sus dueños en tu localidad.</small></p>
+        </section>
+    </div>
 
-        <div class="row">
-            <section class="col-12">
-                <h3>Legal</h3>
-                <p><small>Proyecto de código abierto iniciado por Nahuel Matias Amado bajo licencia GNL.</small></p>
-                <p><small>Es un proyecto portfolio que realice como estudiante.</small></p>
-                <p><small>El código está disponible para ser reutilizado. Se recomienda alterar al menos en parte el logo, nombre y colores para su uso, y proteger adecuadamente la base de datos.</small></p>
-                <p><small><a href="política_de_cookies.html">Política de cookies</a></small></p>
-                <p><small><a href="política_de_privacidad.html">Política de Privacidad y Términos de Uso</a></small></p>
-                <p><small><a href="Exenciones de Responsabilidad.html">Exenciones de Responsabilidad</a></small></p>
-            </section>
-        </div>
+    <hr class="bg-light">
+
+    <div class="row">
+        <section class="col-12">
+            <h3 class="h6">Legal</h3>
+            <p class="px-4 "><small>Proyecto de código abierto iniciado por Nahuel Matias Amado bajo licencia GNL.</small></p>
+            <p class="px-4 "><small>Es un proyecto portfolio que realice como estudiante.</small></p>
+            <p class="px-4 "><small>El código está disponible para ser reutilizado. Se recomienda alterar al menos en parte el logo, nombre y colores para su uso, y proteger adecuadamente la base de datos.</small></p>
+            <p class="px-4 "><small><a href="política_de_cookies.html">Política de cookies</a></small></p>
+            <p class="px-4 "><small><a href="política_de_privacidad.html">Política de Privacidad y Términos de Uso</a></small></p>
+            <p class="px-4 my-4"><small><a href="Exenciones de Responsabilidad.html">Exenciones de Responsabilidad</a></small></p>
+        </section>
+    </div>
         
         
 
