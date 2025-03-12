@@ -1,9 +1,15 @@
-.logo{
-  width: 70px;
+header{
+  min-height: 90px;
+  z-index: 1000;
 }
 
-.nav{
-  display: none;
+.logo{
+  width: 50px;
+  transition: transform 0.2s; /* Añade una transición suave */
+}
+
+.logo:hover{
+  transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
 }
 
 .main{
@@ -14,12 +20,27 @@
   display: none;
 }
 
-.svg{
-  width: 30px;
+.svg-header {
+  width: 45px;
+  transition: transform 0.2s;
+   /* Añade una transición suave */:;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
 }
 
-.svg-login{
+.svg-header:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
+}
+
+.svg{
   width: 40px;
+  transition: transform 0.2s;
+}
+
+.svg:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
 }
 
 .vertical-line{
@@ -60,6 +81,16 @@ hr{
   z-index: 0!important;
 }
 
-header{
-  z-index: 1000;
+.nav-mobile{
+  width: auto;
+  border-bottom-left-radius: 10px;
+  display: none;
+}
+
+.nav-mobile a {
+  text-decoration: none;
+}
+
+.nav-mobile a:hover{
+  color: #ffc107;
 }
