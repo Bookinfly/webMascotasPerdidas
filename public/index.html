@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Es un sitio web para búsqueda de mascotas perdidas..">
+    <meta name="description" content="Encuentra y ayuda a recuperar mascotas perdidas de manera rápida y sencilla. Conéctate con dueños y rescatistas cerca de ti.">
     <meta name="keywords" content="mascotas perdidas, buscar mascotas, encontrar mascotas, animales desaparecidos, perros perdidos, gatos perdidos, buscar animales, encontrar animales, mascotas extraviadas, animales extraviados, recuperar mascotas, localizar mascotas, ayudar a encontrar mascotas, mascotas desaparecidas, búsqueda de mascotas">
     <meta name="robots" content="index, nofollow"><!--🔴⛔ esta para no encontrarse en buscadores-->
-    <meta name="author" content="Nahuel Amado estudiante de la UNL y del programa Talento Tech ex codo a codo 4.0">
+    <meta name="author" content="Nahuel Amado">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+
+
+    <!--optimización para compartir en redes REVISAR UNA VEZ PUBLICADO EN GITHUB PAGES-->
+    <meta property="og:title" content="Buscador de Mascotas">
+    <meta property="og:description" content="Encuentra y ayuda a recuperar mascotas perdidas rápidamente.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!--arreglar canonical cuando este publicado-->
+    <!-- <link rel="canonical" href="https://tusitio.com"> -->
 
     <title>Buscador de Mascotas</title>
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="">
@@ -19,7 +34,7 @@
         <div class="row d-flex justify-content-between">
             <div class="p-1 px-2 col-4 mx-3">
                 <a href="http://localhost:3000/" >
-                    <img src="./img/Diseño sin título.png" alt="Logo mascotas web con link a home" class="logo">
+                    <img src="./img/favicon/favicon.svg" alt="Logo mascotas web con link a home" class="logo">
                 </a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="col-4 p-1 svg-header me-4" id="menuBars"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0d6efd" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
@@ -37,35 +52,39 @@
     <!--INICIO MAIN-->
 
     <main class="container-fluid px-0 main bg-light mt-5 pt-5">
-        <section class="banner m-3">
-            <h1 class="col-12 h1 text-center bg-primary text-light rounded p-2 fw-bold">Buscador de Mascotas</h1>
-            <h2 class="h6 text-center fw-bold m-4 text-primary">Anuncios de animales perdidos, encontrados y avistados</h2>
+        <section class="banner m-3" >
+            <h1 class="col-12 h1 text-center bg-primary text-light rounded p-2 fw-bold"><mark>Buscador de Mascotas</mark></h1>
+            <h2 class="h6 text-center fw-bold m-4 text-primary"><strong>Anuncios</strong> de animales perdidos, encontrados y avistados</h2>
         </section>
-        <section class="barra_busqueda">
+        <section class="barra_busqueda" aria-label="barra de búsqueda">
 
             <!--ocupa solo 10 de 12-->
             <form action="./submit_page" method="get" class="bg-dark rounded col-10 mx-auto p-3 text-light">
                 <div class="row p-3">
-                    <label for="buscador" class="col-3 my-auto ms-0 fw-bold">Buscar</label>
-                    <input type="text" name="buscador" id="buscador"  placeholder="Gato Naranja" class="col-6 m-auto">
-                    <button class="btn btn-light col-2" id="lupa">🔎</button>
+                    <label for="buscador" class="col-3 my-auto ms-0 fw-bold" id="busqueda">Buscar</label>
+                    <input type="text" name="buscador" id="buscador"  placeholder="Gato Naranja" class="col-6 m-auto" aria-labelledby="busqueda">
+                    <button class="btn btn-light col-2" id="lupa">
+                        <span aria-hidden="true">🔎</span>
+                        <span class="visually-hidden">Buscar</span>
+                    </button>
                 </div>
 
                 <div class="row">
-                    <input type="radio" id="mas-nuevo" name="orden" value="mas-nuevo" checked class="col-2 m-auto">
                     <label for="mas-nuevo" class="col-10 m-auto">Más Nuevo</label>
+                    <input type="radio" id="mas-nuevo" name="orden" value="mas-nuevo" checked class="col-2 m-auto">
                 </div>
                 <div class="row">
-                    <input type="radio" id="mas-relevante" name="orden" value="mas-relevante" class="col-2  m-auto">
                     <label for="mas-relevante" class="col-10 m-auto">Más Relevante</label>
+                    <input type="radio" id="mas-relevante" name="orden" value="mas-relevante" class="col-2  m-auto">
                 </div>
+
                 <div class="row p-3">
                     <button class="btn btn-warning col-8 m-auto p-2">➕ Nuevo Anuncio</button>
-                    <button class="filter_button btn btn-light col-2 m-auto d-flex align-items-center justify-content-center" aria-label="filtros" id="botonFiltrosAvanzados"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg"><path fill="#0d6efd" d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></button>
+                    <button class="filter_button btn btn-light col-2 m-auto d-flex align-items-center justify-content-center" aria-label="filtros avanzados" id="botonFiltrosAvanzados"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg" aria-label="imagen filtro"><path fill="#0d6efd" d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></button>
                 </div>
 
                 <!--display:none a filtros avanzados-->
-                <div class="filtros_avanzados m-2" id="filtrosAvanzados">
+                <div class="filtros_avanzados m-2" id="filtrosAvanzados" aria-label="Sección de filtros avanzados">
                         <!-- Nombre -->
                     <label for="nombre" class="my-2">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" maxlength="100"><br>
@@ -205,86 +224,89 @@
             </form>
             
         </section>
-        <section class="anuncios container-fluid mt-5 p-2 bg-dark bg-opacity-10">
+        <section class="anuncios container-fluid mt-5 p-2 bg-dark bg-opacity-10" aria-label="Sección de anuncios dinámicos">
             <div class="contenedor_de_anuncios">
-                <div class="card row mx-auto my-3 bg-primary bg-opacity-10" style="width: 18rem;">
-                    <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="...">
+                <div class="card row mx-auto my-3 bg-primary bg-opacity-10" style="width: 18rem;" aria-label="tarketa de anuncio">
+                    <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="foto de mascota">
                     <div class="card-body">
-                    <h5 class="card-title">Gato encontrado en Paternal</h5>
-                    <p class="card-text">Gato persa atigrado encontrado en Paternal, macho, castrado y amigable. Sín collar ni chip, lo tengo en tránsito mientras busco a su familia.</p>
-                    <a href="#" class="btn btn-light text-dark">Contactar</a>
+                        <h5 class="card-title">Gato encontrado en Paternal</h5>
+                        <p class="card-text">Gato persa atigrado encontrado en Paternal, macho, castrado y amigable. Sín collar ni chip, lo tengo en tránsito mientras busco a su familia.</p>
+                        <button class="btn btn-light text-dark">Contactar</button>
                     </div>
                 </div>
-                <div class="card row mx-auto bg-primary bg-opacity-10" style="width: 18rem;">
-                    <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="...">
+                <div class="card row mx-auto bg-primary bg-opacity-10" style="width: 18rem;" aria-label="tarketa de anuncio">
+                    <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="foto de mascota">
                     <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                    <p class="card-text">Jorgito se perdio cerca de la plaza Aristobulo del Valle en Villa del Parque, es muy manzo y su familia lo extraña..</p>
-                    <a href="#" class="btn btn-light text-dark ">Contactar</a>
+                        <h5 class="card-title">Perro perdido</h5>
+                        <p class="card-text">Jorgito se perdio cerca de la plaza Aristobulo del Valle en Villa del Parque, es muy manzo y su familia lo extraña..</p>
+                        <button class="btn btn-light text-dark ">Contactar</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!--Carrusel para antes de que busquen-->
-        <section id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+        <section id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de anuncios">
             <div class="carousel-inner">
-              <div class="carousel-item active d-flex justify-content-center">
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                  </div>
+                <div class="carousel-item active">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./img/perroCallejero.jpg" class="img-fluid rounded-start" alt="foto de mascota">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Perro avistado en Barracas</h5>
+                                    <p class="card-text">Perro grande y manso de pelaje oscuro, aparecio en Febrero.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Publicado 02/2025</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                  </div>
+                <div class="carousel-item">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./img/gatitoEnCaja.jpg" class="img-fluid rounded-start" alt="foto de mascota">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Encontre Gatito abandonado</h5>
+                                    <p class="card-text">Lo dejaron en la puerta de mí casa, pero no es apto mascota, necesito adoptante responsable!</p>
+                                    <p class="card-text"><small class="text-body-secondary">Publicado 01/2025</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                  </div>
+                <div class="carousel-item">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./img/gatoElegante.jpg" class="img-fluid rounded-start" alt="foto de mascota">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Arturo necesita tránsito</h5>
+                                    <p class="card-text">Gato amable y educado, su dueño fallecio y buscamos adoptantes, o tránsito hasta encontrarle un hogar definitivo.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Publicado 03/2025</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item d-flex justify-content-center">
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                  </div>
-                </div>
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Gato perdido</h5>
-                  </div>
-                </div>
-                <div class="card mx-2 bg-primary bg-opacity-10" style="width: 33%;">
-                  <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Perro perdido</h5>
-                  </div>
-                </div>
-              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </section>
-          
+        </section>
+        
     </main>
 
 <!--INICIO FOOTER-->
@@ -298,24 +320,24 @@
                 <p><small>Email: <span id="email"></span></small></p></div>
         </section>
         <div class="col-1">
-            <div class="vertical-line bg-light"></div>
+            <div class="vertical-line bg-light" aria-hidden="true"></div>
         </div>
 
 
         <!-- Sección de Redes Sociales -->
         <section class="col-3">
             <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg m-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg m-2" aria-label="icono instagram">
                     <path fill="#ffffff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                 </svg>
             </a>
             <a href="https://github.com/Bookinfly/webMascotasPerdidas">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svg m-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svg m-2" aria-label="icono Github">
                     <path fill="#ffffff" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
                 </svg>
             </a>
             <a href="https://www.linkedin.com/in/nahuel-amado/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg m-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg m-2" aria-label="icono linkedin">
                     <path fill="#ffffff" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
                 </svg>
             </a>
@@ -343,7 +365,7 @@
     <div class="row">
         <section class="col-12">
             <h2 class="h6">El proyecto</h2>
-            <p class="px-4 "><small >Buscador de Mascotas Perdidas es un proyecto de código abierto para organizaciones y amantes de los animales. Permite copiar y personalizar la plataforma para tu comunidad, facilitando la búsqueda y recuperación de mascotas perdidas. Úsalo para ayudar a encontrar y reunir mascotas con sus dueños en tu localidad.</small></p>
+            <p class="px-4 "><small >Buscador de Mascotas Perdidas es un <em>proyecto de código abierto</em> para organizaciones y amantes de los <strong>animales</strong>. Permite copiar y personalizar la plataforma <em>para tu comunidad</em>, facilitando la <em>búsqueda y recuperación de mascotas perdidas</em>. Úsalo para ayudar a encontrar y <strong>reunir</strong> mascotas con sus familias en tu localidad.</small></p>
         </section>
     </div>
 
@@ -354,7 +376,7 @@
             <h3 class="h6">Legal</h3>
             <p class="px-4 "><small>Proyecto de código abierto iniciado por Nahuel Matias Amado bajo licencia GNL.</small></p>
             <p class="px-4 "><small>Es un proyecto portfolio que realice como estudiante.</small></p>
-            <p class="px-4 "><small>El código está disponible para ser reutilizado. Se recomienda alterar al menos en parte el logo, nombre y colores para su uso, y proteger adecuadamente la base de datos.</small></p>
+            <p class="px-4 "><small><mark>El código está disponible para ser reutilizado.</mark> Se recomienda alterar al menos en parte el logo, nombre y colores para su uso, y proteger adecuadamente la base de datos.</small></p>
             <p class="px-4 "><small><a href="política_de_cookies.html">Política de cookies</a></small></p>
             <p class="px-4 "><small><a href="política_de_privacidad.html">Política de Privacidad y Términos de Uso</a></small></p>
             <p class="px-4 my-4"><small><a href="Exenciones de Responsabilidad.html">Exenciones de Responsabilidad</a></small></p>

@@ -3,6 +3,16 @@ header{
   z-index: 1000;
 }
 
+strong {
+  font-weight: inherit; /* Quita la negrita */
+}
+
+mark {
+  background: none; /* Quita el fondo amarillo */
+  color: inherit; /* Mantiene el color original del texto */
+}
+
+
 .logo{
   width: 50px;
   transition: transform 0.2s; /* Añade una transición suave */
