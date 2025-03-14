@@ -12,6 +12,10 @@ mark {
   color: inherit; /* Mantiene el color original del texto */
 }
 
+.cover{
+  object-fit: cover;
+}
+
 .only-big{
   display: none;
 }
@@ -56,9 +60,6 @@ mark {
   transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
 }
 
-.card{
-  width: 18rem;
-}
 
 .vertical-line{
   width: 5px;
@@ -131,10 +132,6 @@ hr{
 
   .f-md-5{
     font-size: 1.4rem;
-  }
-
-  .card{
-    width: 90vw;
   }
 
   .only-small{
