@@ -12,6 +12,9 @@ mark {
   color: inherit; /* Mantiene el color original del texto */
 }
 
+.only-big{
+  display: none;
+}
 
 .logo{
   width: 50px;
@@ -51,6 +54,10 @@ mark {
 
 .svg:hover {
   transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
+}
+
+.card{
+  width: 18rem;
 }
 
 .vertical-line{
@@ -104,3 +111,38 @@ hr{
 .nav-mobile a:hover{
   color: #ffc107;
 }
+
+@media screen and ( min-width: 768px ) {
+  .logo {
+    width: 70px;
+  }
+  
+  .mt-6 {
+    margin-top: 6rem !important;
+  }
+
+  .h1-plus{
+    font-size: 3rem;
+  }
+
+  .fw-md-bold{
+    font-weight: bold;
+  }
+
+  .f-md-5{
+    font-size: 1.4rem;
+  }
+
+  .card{
+    width: 90vw;
+  }
+
+  .only-small{
+    display: none;
+  }
+
+  .only-big{
+    display: inline-block;
+  }
+  
+} 
