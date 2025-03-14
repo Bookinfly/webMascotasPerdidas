@@ -57,24 +57,35 @@
             <h2 class="f6 f-md-4 text-center fw-bold m-4 text-primary"><strong>Anuncios</strong> de animales perdidos, encontrados y avistados</h2>
         </section>
         <section class="barra_busqueda" aria-label="barra de búsqueda">
-
             <!--ocupa solo 10 de 12-->
             <form action="./submit_page" method="get" class="bg-dark rounded col-10 mx-auto p-3 text-light">
-                <div class="row p-3">
-                    <label for="buscador" class="col-3 my-auto ms-0 fw-bold" id="busqueda">Buscar</label>
-                    <input type="text" name="buscador" id="buscador"  placeholder="Gato Naranja" class="col-6 m-auto" aria-labelledby="busqueda">
-                    <button class="btn btn-light col-2" id="lupa">
-                        <span aria-hidden="true" class="f-md-5">🔎</span>
-                        <span class="visually-hidden">Buscar</span>
-                    </button>
+
+                <div class="row p-3 align-items-center">
+                    <!-- Label -->
+                    <div class="col-3 col-lg-1 my-auto">
+                        <label for="buscador" class="fw-bold fs-5 fs-lg-4" id="busqueda">Buscar</label>
+                    </div>
+                
+                    <!-- Input -->
+                    <div class="col-6 col-lg-8 my-auto pe-0"> <!-- Padding derecho cero -->
+                        <input type="text" name="buscador" id="buscador" placeholder="Gato Naranja" class="form-control w-100" aria-labelledby="busqueda">
+                    </div>
+                
+                    <!-- Botón de búsqueda -->
+                    <div class="col-2 col-lg-2 my-auto ps-3"> <!-- Margen izquierdo pequeño -->
+                        <button class="btn btn-light w-100" id="lupa">
+                            <span aria-hidden="true" class="fs-4 fs-lg-3">🔎</span>
+                            <span class="visually-hidden">Buscar</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <label for="mas-nuevo" class="col-5 col-md-3 my-auto ms-4 text-start">Más Nuevo</label>
+                <div class="row p-lg-3">
+                    <label for="mas-nuevo" class="col-5 col-md-3 col-lg-2 my-auto ms-4 text-start">Más Nuevo</label>
                     <input type="radio" id="mas-nuevo" name="orden" value="mas-nuevo" checked class="col-1 m-1">
                 </div>
-                <div class="row">
-                    <label for="mas-relevante" class="col-5 col-md-3 my-auto ms-4 text-start">Más Relevante</label>
+                <div class="row p-lg-3">
+                    <label for="mas-relevante" class="col-5 col-md-3 col-lg-2 my-auto ms-4 text-start">Más Relevante</label>
                     <input type="radio" id="mas-relevante" name="orden" value="mas-relevante" class="col-1 m-1">
                 </div>
 
@@ -223,27 +234,45 @@
 
             </form>
             
-        </section>
-        <section class="anuncios container-fluid mt-5 p-2 bg-dark bg-opacity-10" aria-label="Sección de anuncios dinámicos">
-            <div class="contenedor_de_anuncios">
-                <div class="card row my-3 bg-primary bg-opacity-10 card" aria-label="tarketa de anuncio">
-                    <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="card-img-top" alt="foto de mascota">
-                    <div class="card-body">
-                        <h5 class="card-title">Gato encontrado en Paternal</h5>
-                        <p class="card-text">Gato persa atigrado encontrado en Paternal, macho, castrado y amigable. Sín collar ni chip, lo tengo en tránsito mientras busco a su familia.</p>
-                        <button class="btn btn-light text-dark">Contactar</button>
+            <section class="anuncios container-fluid mt-5 p-2 bg-dark bg-opacity-10" aria-label="Sección de anuncios dinámicos">
+                <div class="contenedor_de_anuncios">
+                    <!-- Primera tarjeta -->
+                    <div class="card my-3 bg-primary bg-opacity-10" aria-label="tarjeta de anuncio">
+                        <div class="row g-0">
+                            <!-- Imagen -->
+                            <div class="col-12 col-lg-4">
+                                <img src="./img/Leonardo_Phoenix_10_A_warm_and_intimate_candid_photography_sty_3.jpg" class="img-fluid rounded-start" alt="foto de mascota">
+                            </div>
+                            <!-- Cuerpo de la tarjeta -->
+                            <div class="col-12 col-lg-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gato encontrado en Paternal</h5>
+                                    <p class="card-text">Gato persa atigrado encontrado en Paternal, macho, castrado y amigable. Sin collar ni chip, lo tengo en tránsito mientras busco a su familia.</p>
+                                    <button class="btn btn-light text-dark">Contactar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Segunda tarjeta -->
+                    <div class="card my-3 bg-primary bg-opacity-10" aria-label="tarjeta de anuncio">
+                        <div class="row g-0">
+                            <!-- Imagen -->
+                            <div class="col-12 col-lg-4">
+                                <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="img-fluid rounded-start" alt="foto de mascota">
+                            </div>
+                            <!-- Cuerpo de la tarjeta -->
+                            <div class="col-12 col-lg-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Perro perdido</h5>
+                                    <p class="card-text">Jorgito se perdió cerca de la plaza Aristóbulo del Valle en Villa del Parque, es muy manso y su familia lo extraña.</p>
+                                    <button class="btn btn-light text-dark">Contactar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card row bg-primary bg-opacity-10 card" aria-label="tarketa de anuncio">
-                    <img src="./img/Leonardo_Phoenix_10_a_warmly_lit_intimate_candid_photograph_of_3.jpg" class="card-img-top" alt="foto de mascota">
-                    <div class="card-body">
-                        <h5 class="card-title">Perro perdido</h5>
-                        <p class="card-text">Jorgito se perdio cerca de la plaza Aristobulo del Valle en Villa del Parque, es muy manzo y su familia lo extraña..</p>
-                        <button class="btn btn-light text-dark ">Contactar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <!--Carrusel para antes de que busquen-->
         <section id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de anuncios">
@@ -251,10 +280,10 @@
                 <div class="carousel-item active">
                     <div class="card mb-3 d-block w-100 h-100">
                         <div class="row g-0 d-flex align-items-stretch h-100">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-lg-2">
                                 <img src="./img/perroCallejero.jpg" class="img-fluid rounded-start cover" alt="foto de mascota">
                             </div>
-                            <div class="col-md-8 d-flex flex-column">
+                            <div class="col-md-8 col-lg-10 d-flex flex-column">
                                 <div class="card-body">
                                     <h5 class="card-title">Perro avistado en Barracas</h5>
                                     <p class="card-text">Perro grande y manso de pelaje oscuro, aparecio en Febrero.</p>
@@ -267,10 +296,10 @@
                 <div class="carousel-item">
                     <div class="card mb-3 d-block w-100 h-100">
                         <div class="row g-0 d-flex align-items-stretch h-100">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-lg-2">
                                 <img src="./img/gatitoEnCaja.jpg" class="img-fluid rounded-start cover" alt="foto de mascota">
                             </div>
-                            <div class="col-md-8 d-flex flex-column">
+                            <div class="col-md-8  col-lg-19 d-flex flex-column">
                                 <div class="card-body">
                                     <h5 class="card-title">Encontre Gatito abandonado</h5>
                                     <p class="card-text">Lo dejaron en la puerta de mí casa, pero no es apto mascota, necesito adoptante responsable!</p>
@@ -283,10 +312,10 @@
                 <div class="carousel-item">
                     <div class="card mb-3 d-block w-100 h-100">
                         <div class="row g-0 d-flex align-items-stretch h-100">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-lg-2">
                                 <img src="./img/gatoElegante.jpg" class="img-fluid rounded-start cover" alt="foto de mascota">
                             </div>
-                            <div class="col-md-8 d-flex flex-column">
+                            <div class="col-md-8 col-lg-10 d-flex flex-column">
                                 <div class="card-body">
                                     <h5 class="card-title">Arturo necesita tránsito</h5>
                                     <p class="card-text">Gato amable y educado, su dueño fallecio y buscamos adoptantes, o tránsito hasta encontrarle un hogar definitivo.</p>
