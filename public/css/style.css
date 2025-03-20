@@ -25,12 +25,28 @@ mark {
   transition: transform 0.2s; /* Añade una transición suave */
 }
 
+#menuDesktop{
+  display: none;
+}
+
+#menuBars{
+  display: flex;
+}
+
 .logo:hover{
   transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
 }
 
 .main{
   margin-top: 4rem;
+}
+
+.min-win-personalizado{
+  min-width: 50px!important;
+}
+
+.min-win-personalizado-body{
+  min-width: 375px!important;
 }
 
 .filtros_avanzados{
@@ -113,6 +129,10 @@ hr{
   color: #ffc107;
 }
 
+#header-desktop {
+  display: none !important;
+}
+
 @media screen and ( min-width: 768px ) {
   .logo {
     width: 70px;
@@ -141,5 +161,17 @@ hr{
   .only-big{
     display: inline-block;
   }
-  
+
+  #header-box{
+    display: none!important;
+  }
+
+  #header-desktop{
+    display: block !important;
+  }
+
+  #header-desktop a{
+    text-decoration: none;
+  }
+
 } 

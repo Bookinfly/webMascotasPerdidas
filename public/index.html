@@ -28,16 +28,19 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="">
+<body>
     <!--INICIO HEADER-->
-    <header class="container-fluid bg-dark position-fixed top-0 p-1 pt-3 z-5 py-md-4">
-        <div class="row d-flex justify-content-between">
-            <div class="p-1 px-2 col-4 mx-3">
+    <header class="container-fluid bg-dark position-fixed top-0 p-1 pt-3 z-5 py-md-4 min-win-personalizado-body">
+        <div class="row d-flex justify-content-between" id="header-box">
+            <div class="p-1 px-2 col-4 col-lg-1 mx-3">
                 <a href="http://localhost:3000/" >
                     <img src="./img/favicon/favicon.svg" alt="Logo mascotas web con link a home" class="logo">
                 </a>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="col-4 p-1 svg-header me-4" id="menuBars"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0d6efd" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="col-4 p-1 svg-header me-4" id="menuBars">
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path fill="#0d6efd" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+            </svg>
         </div>
         <nav class="container bg-dark nav-mobile fw-bold mt-3 position-absolute top-1 end-0" id="menuMobile">
             <ul class="m-3">
@@ -47,11 +50,28 @@
                 <li><a href="#" class="lh-lg">Colabora con el Proyecto</a></li>
             </ul>
         </nav>
+        <div class="container" id="header-desktop">
+            <div class="row">
+                <div class="col-2">
+                    <a href="http://localhost:3000/" >
+                        <img src="./img/favicon/favicon.svg" alt="Logo mascotas web con link a home" class="logo">
+                    </a>
+                </div>
+                <div class="col-9  my-auto">
+                    <ul class="d-flex align-items-center gap-3 list-unstyled fs-5">
+                        <li><a href="#" class="lh-lg btn btn-primary rounded-pill p-3 fw-bold">Nosotros</a></li>
+                        <li><a href="#" class="lh-lg btn btn-primary rounded-pill p-3 fw-bold">Mapa de Anuncios</a></li>
+                        <li><a href="#" class="lh-lg btn btn-primary rounded-pill p-3 fw-bold">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
 
+
+        </div>
     </header>
     <!--INICIO MAIN-->
 
-    <main class="container-fluid px-0 main bg-light mt-6 pt-5">
+    <main class="container-fluid px-0 main bg-light mt-6 pt-5 min-win-personalizado-body">
         <section class="banner m-3" >
             <h1 class="col-12 h1-plus text-center bg-primary text-light rounded p-2 fw-bold"><mark>Buscador de Mascotas</mark></h1>
             <h2 class="f6 f-md-4 text-center fw-bold m-4 text-primary"><strong>Anuncios</strong> de animales perdidos, encontrados y avistados</h2>
@@ -73,7 +93,7 @@
                 
                     <!-- Botón de búsqueda -->
                     <div class="col-2 col-lg-2 my-auto ps-3"> <!-- Margen izquierdo pequeño -->
-                        <button class="btn btn-light w-100" id="lupa">
+                        <button class="btn btn-light w-100 min-win-personalizado" id="lupa">
                             <span aria-hidden="true" class="fs-4 fs-lg-3">🔎</span>
                             <span class="visually-hidden">Buscar</span>
                         </button>
@@ -339,7 +359,7 @@
     </main>
 
 <!--INICIO FOOTER-->
-<footer class="container-fluid text-light bg-dark mt-4 p-auto pt-4">
+<footer class="container-fluid text-light bg-dark mt-4 p-auto pt-4 min-win-personalizado-body">
     <div class="row">
         <!-- Sección de Contacto -->
         <section class="col-7 col-md-3">
