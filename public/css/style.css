@@ -172,6 +172,14 @@ hr{
 
   #header-desktop a{
     text-decoration: none;
+    transition: transform 0.2s; /* Añade una transición suave */
   }
+
+  #header-desktop a:hover{
+    color: #ffc107;
+    transform: scale(1.2); /* Aumenta el tamaño del SVG sin cambiar el ancho */
+  }
+
+
 
 } 
